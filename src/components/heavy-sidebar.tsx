@@ -15,7 +15,7 @@ export async function HeavySidebar() {
   const generatedAt = new Date().toLocaleTimeString();
 
   return (
-    <aside className="w-64 bg-gray-900 text-white p-6 h-full">
+    <aside className="w-64 bg-gray-900 text-white p-6 min-h-full">
       <div className="mb-6 text-xs text-gray-500">
         Wygenerowano: {generatedAt}
       </div>

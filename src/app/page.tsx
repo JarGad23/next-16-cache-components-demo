@@ -1,30 +1,25 @@
 import { ExternalApiComparison } from "@/components/external-api-comparison";
-import { HeavySidebar } from "@/components/heavy-sidebar";
-import { RevalidateButton } from "@/components/revalidate-button";
 import { RevenueComparison } from "@/components/revenue-comparison";
-import { Suspense } from "react";
+import Link from "next/link";
 
 export default function DashboardPage() {
   return (
-    <div className="flex min-h-screen bg-gray-950 text-gray-100 font-sans">
-      <Suspense fallback={<div className="w-64 bg-gray-900 animate-pulse" />}>
-        <HeavySidebar />
-      </Suspense>
-
+    <div className="flex flex-col gap-y-8">
+      <div className="flex flex-col sm:flex-row gap-y-4 gap-x-4">
+        <Link
+          href="/cached"
+          className="flex-1 bg-emerald-500 py-8 px-3 rounded-md text-lg text-center"
+        >
+          Go to cached page
+        </Link>
+        <Link
+          href="/uncached"
+          className="flex-1 bg-rose-500 py-8 px-3 rounded-md text-lg text-center"
+        >
+          Go to un cached page
+        </Link>
+      </div>
       <main className="flex-1 p-8 overflow-y-auto">
-        <header className="flex justify-between items-center mb-10">
-          <div>
-            <h1 className="text-3xl font-bold bg-clip-text text-transparent bg-linear-to-r from-blue-400 to-purple-400">
-              Next.js 16 Performance Demo
-            </h1>
-            <p className="text-gray-400 mt-2">
-              Porównanie: Realtime Rendering vs. &quot;use cache&quot;
-            </p>
-          </div>
-
-          <RevalidateButton />
-        </header>
-
         <div className="space-y-12">
           <section>
             <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
